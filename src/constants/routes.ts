@@ -1,0 +1,16 @@
+export const adminRoutes = [
+  { path: '/', label: 'Overview' },
+  { path: '/users', label: 'Customers' },
+  { path: '/professionals', label: 'Professionals' },
+  { path: '/disputes', label: 'Disputes' },
+  { path: '/bookings', label: 'Bookings' },
+  { path: '/payments', label: 'Payments' },
+  { path: '/services', label: 'Services' },
+  { path: '/notifications', label: 'Notifications' },
+  { path: '/reports', label: 'Reports' },
+  { path: '/security', label: 'Security' },
+  { path: '/analytics', label: 'Analytics' },
+  { path: '/communications', label: 'Communications' },
+  { path: '/activity', label: 'Activity log' },
+  { path: '/settings', label: 'Settings' },
+] as const;
