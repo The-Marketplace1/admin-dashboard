@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          # cache: pnpm # Commented out because pnpm-lock.yaml is not committed to the repository
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Lint
         run: pnpm lint
