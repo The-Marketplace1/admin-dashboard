@@ -1,45 +1,26 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-<<<<<<< eb157dd... Update
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["vite/client", "node"],
-    "jsx": "react-jsx",
-    "strict": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["node", "vite/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "tests", "vite.config.ts", "eslint.config.js"]
-}
-=======
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "rootDir": ".",
-    "outDir": "dist",
-    "declaration": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noFallthroughCasesInSwitch": true,
-    "noEmitOnError": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "types": ["node", "vitest/globals"]
-  },
-  "include": ["src", "tests", "scripts/validate-repository.mjs"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["src", "tests", "vite.config.ts", "eslint.config.js"],
+  "exclude": ["node_modules", "dist"]
 }
 
->>>>>>> eb157dd (Update)
