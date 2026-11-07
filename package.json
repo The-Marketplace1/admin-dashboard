@@ -1,39 +1,46 @@
 {
-  "name": "admin-dashboard",
+  "name": "marketplace-analytics",
   "version": "1.0.0",
   "private": true,
+  "description": "Marketplace product analytics service with privacy-aware event processing and reporting.",
   "type": "module",
-  "packageManager": "pnpm@10.26.1",
+  "exports": {
+    "./app": {
+      "types": "./dist/src/app/index.d.ts",
+      "import": "./dist/src/app/index.js"
+    },
+    "./contracts": {
+      "types": "./dist/src/public.d.ts",
+      "import": "./dist/src/public.js"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0",
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/src/index.js",
+    "lint": "eslint src tests scripts/validate-repository.mjs eslint.config.js vitest.config.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lint": "eslint src tests vite.config.ts eslint.config.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "security": "pnpm audit --audit-level=high",
+    "validate": "pnpm run lint && pnpm run typecheck && pnpm test && pnpm run security && pnpm run build && node scripts/validate-repository.mjs"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.21",
-    "axios": "^1.12.2",
-    "lucide-react": "^0.545.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-hook-form": "^7.62.0",
-    "react-router-dom": "^7.18.3",
-    "zod": "^3.25.76",
-    "zustand": "^5.0.8"
+    "express": "^5.2.1",
+    "pino": "^9.14.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.3.3",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "@vitejs/plugin-react": "^5.0.4",
-    "eslint": "^9.36.0",
-    "eslint-plugin-react-hooks": "^6.1.0",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.45.0",
-    "vite": "^7.3.6",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8",
     "vitest": "^4.1.11"
   }
 }
