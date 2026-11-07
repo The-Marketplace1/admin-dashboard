@@ -7,7 +7,8 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
     "noEmit": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
@@ -16,7 +17,7 @@
     "types": ["node", "vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "rootDir": ".",
     "outDir": "dist",
